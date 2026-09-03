@@ -1,3 +1,4 @@
+
 let cur="Socrates";
 function setLegend(n){cur=n;alert(n+" selected! Tap ENTER THRONE");}
 function enterThrone(){
