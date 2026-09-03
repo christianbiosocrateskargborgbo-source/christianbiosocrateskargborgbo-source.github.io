@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KARGBO 10 - ONE THRONE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BioSocrates Throne</title>
 <style>
-body{background:#000;color:gold;text-align:center;font-family:Arial;padding:15px;margin:0}
-h1{font-size:42px;margin:10px} h2{color:#fff}
-.card{background:#111;border:2px solid gold;border-radius:20px;padding:20px;margin:15px 0}
-.emoji{font-size:70px} button{background:gold;color:#000;border:none;padding:12px 25px;border-radius:25px;font-weight:bold;margin-top:10px}
-#box{background:#111;border:1px solid gold;padding:15px;border-radius:10px;margin:20px 0;min-height:50px}
+body{background:#000;color:gold;text-align:center;font-family:Arial;padding:20px}
+button{background:#111;color:gold;border:2px solid gold;padding:12px;margin:5px;font-weight:bold}
+#chatArea{margin-top:20px}
+#msgs{height:250px;overflow:auto;border:2px solid gold;background:#111;color:white;padding:10px;text-align:left}
+input{padding:12px;width:60%}
 </style>
 </head>
 <body>
-<h1>👑 KARGBO 10</h1>
-<h2>Christian BioSocrates Kargbo</h2>
-<p>Bo City | Sierra Leone | ONE THRONE</p>
-<div id="box">Click a legend below 👇</div>
-
-<div class="card"><div class="emoji">👑💰</div><h3>1. Mansa Musa</h3><p>Richest man ever - Mali</p><button onclick="box.innerText='Mansa Musa was the richest person in history! Mali Empire, 14th century - His wealth built Timbuktu!'">Learn</button></div>
-
-<div class="card"><div class="emoji">👸🇪🇬</div><h3>2. Cleopatra</h3><p>Queen of Nile - Egypt</p><button onclick="box.innerText='Cleopatra VII - Last pharaoh of Egypt! Smart, powerful, spoke 9 languages!'">Learn</button></div>
-
-<div class="card"><div class="emoji">⚔️🛡️</div><h3>3. Shaka Zulu</h3><p>Warrior King - South Africa</p><button onclick="box.innerText='Shaka Zulu built the Zulu Empire! Greatest African military genius!'">Learn</button></div>
-
-<div class="card"><div class="emoji">👑👩🏿</div><h3>4. Queen Nzinga</h3><p>Fearless Queen - Angola</p><button onclick="box.innerText='Queen Nzinga fought Portuguese colonizers for 30 years! Never surrendered!'">Learn</button></div>
-
-<div class="card"><div class="emoji">🦁👑</div><h3>5. Sundiata Keita</h3><p>Lion King - Mali Empire</p><button onclick="box.innerText='Sundiata Keita - The real Lion King! Founder of Mali Empire! Overcame disability to become great!'">Learn</button></div>
-
-<div c
+<h1>👑 BioSocrates S3 6 LEGENDS</h1>
+<button onclick="setLegend('Socrates')">Socrates</button>
+<button onclick="setLegend('Galileo')">Galileo</button>
+<button onclick="setLegend('Mandela')">Mandela</button>
+<button onclick="setLegend('Ada')">Ada</button>
+<button onclick="setLegend('Leonardo')">Leonardo</button>
+<button onclick="setLegend('Cleopatra')">Cleopatra</button>
+<br><br>
+<button onclick="enterThrone()" style="background:gold;color:black;padding:15px;font-size:18px">ENTER THRONE</button>
+<div id="chatArea"></div>
+<script src="throne.js?v=100"></script>
+</body>
+</html>
