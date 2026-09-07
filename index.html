@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BO-ATOM • BioSocrates</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial;text-align:center;margin:0}
+.banner{background:#ffeb00;color:#000;padding:12px;font-weight:bold}
+#atom{width:140px;height:140px;margin:60px auto;border-radius:50%;background:radial-gradient(circle,#00ff88,#004422);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;animation:spin 2s linear infinite;box-shadow:0 0 30px #00ff88;cursor:pointer}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+#score{font-size:22px;color:#00ff88;margin:20px;font-weight:bold}
+#capsule{margin:20px auto;padding:15px;border:2px solid #00ff88;border-radius:20px;max-width:320px}
+.footer{padding:15px;background:#111;color:#00ff88;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="banner">KARGBO THRONE WHITE - Bo City 6 Legends LIVE - GOLD + WHITE = FIXED!</div>
+<div style="padding:10px;background:#0a0a0a;display:flex;justify-content:space-between"><span>BO-ATOM • BioSocrates</span><button onclick="reset()" style="border:1px solid #00ff88;background:transparent;color:#00ff88;padding:6px 12px;border-radius:8px;">RESET</button></div>
+<h1>Capture the <span style="color:#00ff88">ATOM</span></h1>
+<div id="score">SCORE: 0</div>
+<div id="atom" onclick="capture()">ATOM</div>
+<div id="capsule"><h2 style="color:#00ff88">BO-SOURCE</h2><p>6 Legends • White Throne</p></div>
+<div class="footer">© Bo City • BioSocrates S3 • Kargbo 10</div>
+<script>
+let score=0;
+function capture(){score+=10;document.getElementById('score').innerText='SCORE: '+score;let a=document.getElementById('atom');a.style.transform='scale(1.3)';setTimeout(()=>a.style.transform='scale(1)',150);}
+function reset(){score=0;document.getElementById('score').innerText='SCORE: 0';}
+</script>
+</body>
+</html>
