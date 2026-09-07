@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BO 11:47</title>
+<style>
+body{margin:0;background:#0a0a0a;color:#fff;text-align:center;font-family:sans-serif}
+.b{background:gold;color:#000;padding:12px;font-weight:bold}
+#a{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:20px}
+.d{width:85px;height:85px;border-radius:50%;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="b">KARGBO 11:47 - 6 ATOMS FIXED</div>
+<h2>Capture <span style="color:#0f8">ATOMS</span></h2>
+<div style="background:#1a1a2e;margin:10px;padding:12px;border-radius:10px">
+SCORE: <span id="s">0</span>
+</div>
+<div id="a"></div>
+<script>
+let S=0;
+let C=['#0f8','#0af','#f34','#fd0','#a4f','#f80'];
+let F=[330,392,494,523,659,880];
+let AC=null;
+function beep(f){
+ try{
+  if(!AC) AC=new AudioContext();
+  let o=AC.createOscillator();
+  let g=AC.createGain();
+  o.frequency.value=f;
+  o.connect(g);
+  g.connect(AC.destination);
+  g.gain.setValueAtTime(0.3,AC.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.01,AC.currentTime+0.4);
+  o.start();
+  o.stop(AC.currentTime+0.4);
+ }catch(e){}
+}
+let box=document.getElementById('a');
+for(let i=0;i<6;i++){
+ let d=document.createElement('div');
+ d.className='d';
+ d.style.background=C[i];
+ d.style.boxShadow='0 0 18px '+C[i];
+ d.onclick=function(){
+  S+=10;
+  document.getElementById('s').innerText=S;
+  beep(F[i]);
+ };
+ box.appendChild(d);
+}
+</script>
+</body>
+</html>
