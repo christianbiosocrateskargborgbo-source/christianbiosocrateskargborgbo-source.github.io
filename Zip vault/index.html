@@ -1,0 +1,29 @@
+<div style="background:#111;border:2px solid gold;border-radius:12px;padding:10px;max-width:380px;margin:10px auto;text-align:center">
+<p style="color:gold;font-weight:900;margin:5px">🔒 INCOGNITO TEST</p>
+<p id="incog" style="color:#0f0;font-size:13px">Checking...</p>
+<button onclick="copyLink()" style="background:gold;color:#000;padding:10px 18px;border-radius:20px;font-weight:900;border:none;margin:5px">📋 COPY VAULT LINK</button>
+<button onclick="showIncog()" style="background:#fff;color:#000;padding:10px 18px;border-radius:20px;font-weight:900;border:none;margin:5px">🔓 HOW TO OPEN INCOGNITO</button>
+<p id="how" style="display:none;color:#fff;font-size:12px;text-align:left;background:#000;padding:8px;border-radius:8px">
+1. Copy link (button above)<br>
+2. Chrome → Tap <b>3 dots ⋮</b> top right<br>
+3. Tap <b>New incognito tab</b><br>
+4. Paste link → Enter<br>
+5. Your Real Face Vault will work! 👑
+</p>
+</div>
+<script>
+// Detect incognito-ish
+function detectIncog(){
+ let fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+ if(!fs){document.getElementById('incog').innerHTML='✅ Incognito Ready (Firefox/Private Mode OK)';return;}
+ fs(window.TEMPORARY,100,()=>{document.getElementById('incog').innerHTML='🌐 Normal Mode - Also works! ✅';},()=>{document.getElementById('incog').innerHTML='🔒 INCOGNITO MODE DETECTED ✅ Works!';});
+}
+function copyLink(){
+ navigator.clipboard.writeText(location.href).then(()=>alert('✅ Link copied! Now open Incognito and paste! 👑'));
+}
+function showIncog(){
+ let h=document.getElementById('how');
+ h.style.display = h.style.display=='none' ? 'block' : 'none';
+}
+detectIncog();
+</script>
